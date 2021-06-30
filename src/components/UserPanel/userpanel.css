@@ -1,0 +1,35 @@
+.user-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.user-panel > * {
+    margin: 0.75rem 0rem;
+}
+
+.user-panel input{
+    width: 20rem;
+    height: 1.5rem;
+    border : none;
+    border-bottom: 0.1rem solid var(--secondary-colour);
+    padding: 0.1rem 2rem;
+}
+.user-panel input:focus{
+    outline: none;
+    border: 0.1rem solid var(--secondary-colour);
+}
+
+.user-panel button{
+    margin-top: 6rem;
+    width: 5rem;
+    height: 1.5rem;
+    background-color: var(--primary-colour);
+    color: var(--text-colour);
+    border: none;
+    border-radius: 0.75rem;
+    margin: 0rem 1rem;
+    cursor: pointer;
+}

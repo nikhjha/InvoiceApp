@@ -1,0 +1,57 @@
+.create-invoice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.create-invoice > div {
+    overflow-x: scroll;
+    border: 0.1rem solid var(--secondary-colour);
+}
+.input-panel {
+    padding: 1rem;
+}
+.input-panel > * {
+    margin: 0.5rem 0rem;
+}
+
+.input-panel input {
+    width: 70%;
+    height: 1.5rem;
+}
+
+.input-panel input{
+    border : none;
+    border-bottom: 0.1rem solid var(--secondary-colour);
+    padding: 0.1rem;
+}
+.input-panel input:focus{
+    outline: none;
+    border: 0.1rem solid var(--secondary-colour);
+}
+
+.input-panel button{
+    width: 5rem;
+    height: 1.5rem;
+    background-color: var(--primary-colour);
+    color: var(--text-colour);
+    border: none;
+    border-radius: 0.75rem;
+    margin: 0rem 1rem;
+    cursor: pointer;
+}
+
+.input-items{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    gap : 0.2rem;
+    border: 0.2rem solid var(--secondary-colour);
+    background-color: var(--secondary-colour);
+}
+
+.input-items > div {
+    height: 3rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

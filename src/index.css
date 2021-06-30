@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 20px;
+    --primary-colour : #00CC99;
+    --secondary-colour : #93DFB8;
+    --text-colour : white;
+}

@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.inner-container {
+    margin: 2rem 0rem;
+    width: 830px;
+    max-width: calc(100% - 2rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 7.5rem);
+    grid-auto-rows: 9rem;
+    gap : 2rem;
+}
+
+.inner-container > div {
+    box-shadow: 0rem 0rem 0.5rem 0rem var(--secondary-colour), 0rem 0.1rem 0.1rem 0rem var(--secondary-colour);
+
+}
+
+.invoice-adder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-colour);
+    color: var(--text-colour);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0rem 0.5rem;
+    cursor: pointer;
+}
+.mini-invoice {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-top: 2rem;
+    font-size: 0.8rem;
+    border-radius: 0.4rem;
+    color: var(--primary-colour);
+    position: relative;
+}
+.mini-invoice p:nth-child(2){
+    margin-bottom: 1rem;
+}
+.mini-invoice p:nth-child(4){
+    margin-bottom: 1rem;
+}
+.mini-invoice:hover {
+    background-color: var(--primary-colour);
+    color: var(--text-colour);
+}
+
+.mini-invoice-utility-show {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.2rem;
+    cursor: pointer;
+}
+.mini-invoice-utility{
+    position: absolute;
+    top:0.6rem;
+    right: 0.2rem;
+    width: 6rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 0.05rem solid var(--secondary-colour);
+}
+.mini-invoice-utility button {
+    border: none;
+    border-bottom: 0.05rem solid var(--secondary-colour);
+    background-color: white;
+    cursor: pointer;
+    height: 1.5rem;
+}
+.mini-invoice-utility button:hover {
+    background-color: var(--primary-colour);
+    color: var(--text-colour);
+}
+.colour-detail{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+.colour-detail p{
+    margin: 2rem 0rem;
+}
+.colour-detail span{
+    margin: 0rem 1rem;
+    transform: translateY(0.3rem);
+}
+.user-invoice-info{
+    position: absolute;
+    top: 3rem;
+    right: 6rem;
+}
+.user-invoice-info p{
+    width: 12rem;
+    font-size: 1rem;
+    margin: 2rem 0rem;
+    font-weight: 600;
+    color: var(--primary-colour);
+}
+.user-invoice-info p:nth-child(4){
+    color: grey;
+    font-size: 0.8rem;
+}
