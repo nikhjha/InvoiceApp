@@ -121,6 +121,7 @@
     display: grid;
     grid-template-columns: 1rem 1fr;
     gap : 1rem;
+    padding-bottom: 1rem;
 }
 .invoice-notes-content p{
     font-size: 0.8rem;

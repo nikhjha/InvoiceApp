@@ -74,6 +74,8 @@ const invoices = (state = [...boilerPlateInvoice], action) => {
             return [...state, action.payload];
         case "DELETE_INVOICE":
             return [...deleteInvoice(state,action.payload)];
+        case "DELETE_ALL_INVOICES":
+            return [];
         case "MARK_AS_PAID":
             return [...markAsPaid(state,action.payload)];
         default :

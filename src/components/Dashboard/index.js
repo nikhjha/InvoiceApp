@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { markAsPaid, deleteInvoice } from "../../action";
+import { pdfGenerationContext } from "../../context/PdfGenerationProvider";
 import colourSchema from "../../colourSchema";
 import "./dashboard.css";
 
@@ -9,6 +10,7 @@ const MiniInvoice = ({ data }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const miniInvoiceDiv = useRef();
+  const {generatePdfByData} = useContext(pdfGenerationContext);
   const [showUtility, setShowUtility] = useState(false);
   useEffect(() => {
     const dueDate = data.dueDate.split("-").map((st) => {
@@ -72,9 +74,10 @@ const MiniInvoice = ({ data }) => {
         <button
           onClick={() => {
             setShowUtility(false);
+            generatePdfByData(data);
           }}
         >
-          Send
+          download
         </button>
         <button
           onClick={() => {

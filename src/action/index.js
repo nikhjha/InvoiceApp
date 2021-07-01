@@ -31,3 +31,10 @@ export const logIn = (user) => {
         payload : user
     };
 };
+
+
+export const deleteAllInvoices = () => {
+    return {
+        type : "DELETE_ALL_INVOICES"
+    };
+};

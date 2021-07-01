@@ -1,4 +1,4 @@
-import React, {useRef,useEffect} from "react";
+import React, {useRef, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
@@ -13,7 +13,12 @@ export default function PreviewInvoice() {
   const data = invoices.filter(
     (invoice) => invoice.invoiceID.toString() === id
   )[0];
+  
   useEffect(() => {
+    if(!data){
+      history.push("/");
+      return;
+    }
     const dueDate = data.dueDate.split("-").map((st) => {
       return st - "0";
     });
@@ -39,11 +44,11 @@ export default function PreviewInvoice() {
       "--secondary-colour",
       secondaryColour
     );
-  }, [data]);
+  }, [data,history]);
   return (
     <div ref={invoiceDiv} style={{ position: "relative" }}>
-      <Invoice data={data} />
-      <div onClick={()=>{history.push("/")}} style={{ position: "absolute", top: "0.5rem", right: "15rem",cursor : 'pointer',color : "var(--primary-colour)"}}>
+      {data && <Invoice data={data}/>}
+      <div onClick={()=>{history.push("/");}} style={{ position: "absolute", top: "0.5rem", right: "15rem",cursor : 'pointer',color : "var(--primary-colour)"}}>
         <span className="material-icons">arrow_back</span>
       </div>
     </div>

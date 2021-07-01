@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {logIn} from "../../action";
+import {logIn,deleteAllInvoices} from "../../action";
 import "./userpanel.css";
 
 export default function UserPanel() {
@@ -25,7 +25,7 @@ export default function UserPanel() {
             <input type="text" value={userAddress} onChange={(e)=>{setUserAddress(e.target.value)}}/>
             <div>
                 <button onClick={()=>{history.push("/")}}>Back</button>
-                <button onClick={()=>{dispatch(logIn(userData));history.push("/");}}>Log In</button>
+                <button onClick={()=>{dispatch(logIn(userData));dispatch(deleteAllInvoices());history.push("/");}}>Log In</button>
             </div>
         </div>
     )

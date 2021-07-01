@@ -26,7 +26,7 @@ export default function Invoice({ data }) {
     const totalAmount = totalCost + taxPay;
   return (
     <div className="invoice-container">
-      <div className="invoice">
+      <div className="invoice" id="invoice">
         <div className="invoice-header">
           <h1>Invoice</h1>
           <p>{data.yourDetail}</p>
@@ -93,12 +93,12 @@ export default function Invoice({ data }) {
             <p>Notes</p>
             <div className="invoice-notes-content">
               {data.notes.map((note,index) => (
-                <>
-                  <div key={`notes-div-${index}`}>
+                <React.Fragment key={`notes-div-${index}`}>
+                  <div>
                     <div className="note-circle"></div>
                   </div>
-                  <p key={`notes-p-${index}`}>{note}</p>
-                </>
+                  <p>{note}</p>
+               </React.Fragment>
               ))}
             </div>
           </div>}

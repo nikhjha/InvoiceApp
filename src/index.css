@@ -10,3 +10,13 @@
     --secondary-colour : #93DFB8;
     --text-colour : white;
 }
+
+.small-screen {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
