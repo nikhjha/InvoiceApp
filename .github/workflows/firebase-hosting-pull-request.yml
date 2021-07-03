@@ -8,6 +8,14 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     environment: firebase-hosting-env
+    env:
+      REACT_APP_APIKEY: ${{ secrets.REACT_APP_APIKEY }}
+      REACT_APP_AUTHDOMAIN: ${{ secrets.REACT_APP_AUTHDOMAIN }}
+      REACT_APP_PROJECTID: ${{ secrets.REACT_APP_PROJECTID }}
+      REACT_APP_STORAGEBUCKET: ${{ secrets.REACT_APP_STORAGEBUCKET }}
+      REACT_APP_MESSAGINGSENDERID: ${{ secrets.REACT_APP_MESSAGINGSENDERID }}
+      REACT_APP_APPID: ${{ secrets.REACT_APP_APPID }}
+      REACT_APP_MEASUREMENTID: ${{ secrets.REACT_APP_MEASUREMENTID }}
     steps:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
