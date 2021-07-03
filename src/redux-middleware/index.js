@@ -15,8 +15,8 @@ const modifyUser = async(store,data) => {
         const userData = await db.collection("users").where("userID", "==", store.getState().userID).limit(1).get();
         const userDoc = userData.docs[0];
         const currentUser = data;
-        const tmpdata = {...userDoc.data(), name: currentUser.name, detail : currentUser.userDetail, address : currentUser.userAddress};
-        userDoc.ref.update(tmpdata);
+        const tmpdata = { name: currentUser.name, detail : currentUser.userDetail, address : currentUser.userAddress};
+        userDoc.ref.update({...tmpdata});
     }
     store.dispatch(updateUserData(data));
 }
@@ -26,8 +26,8 @@ const pushNewInvoice = async(store,data) => {
         const userData = await db.collection("users").where("userID", "==", store.getState().userID).limit(1).get();
         const userDoc = userData.docs[0];
         const invoiceData = data;
-        const tmpdata = {...userDoc.data(),invoices : [...userDoc.data().invoices, invoiceData]};
-        userDoc.ref.update(tmpdata);
+        const tmpdata = {invoices : [...userDoc.data().invoices, invoiceData]};
+        userDoc.ref.update({...tmpdata});
     }
 }
 
@@ -36,8 +36,8 @@ const deleteInvoice = async(store,invoiceID) => {
         const userData = await db.collection("users").where("userID", "==", store.getState().userID).limit(1).get();
         const userDoc = userData.docs[0];
         const invoiceData = userDoc.data().invoices.filter(invoice => invoice.invoiceID !== invoiceID);
-        const tmpdata = {...userDoc.data(),invoices : [...invoiceData]};
-        userDoc.ref.update(tmpdata);
+        const tmpdata = {invoices : [...invoiceData]};
+        userDoc.ref.update({...tmpdata});
     }
 }
 
@@ -51,8 +51,8 @@ const markAsPaid = async(store,invoiceID) => {
             }
             return invoice
         });
-        const tmpdata = {...userDoc.data(),invoices : [...invoiceData]};
-        userDoc.ref.update(tmpdata);
+        const tmpdata = {invoices : [...invoiceData]};
+        userDoc.ref.update({...tmpdata});
     }
 }
 
