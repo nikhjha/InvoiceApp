@@ -6,9 +6,9 @@
 
 :root {
     font-size: 20px;
-    --primary-colour : #00CC99;
-    --secondary-colour : #93DFB8;
-    --text-colour : white;
+    --primary-colour : #3C5186;
+    --text-colour : #FFF5DE;
+    --secondary-colour :  #9B72AA;
 }
 
 .small-screen {

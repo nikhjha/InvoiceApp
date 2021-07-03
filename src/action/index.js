@@ -5,6 +5,12 @@ export const pushNewInvoice = (payload) => {
     };
 };
 
+export const loadNewInvoices = (payload) => {
+    return {
+        type : "LOAD_NEW_INVOICES",
+        payload : payload
+    };
+};
 export const deleteInvoice = (id) => {
     return {
         type : "DELETE_INVOICE",
@@ -25,16 +31,43 @@ export const createNewInvoiceID = () => {
     };
 };
 
-export const logIn = (user) => {
+export const createNewInvoiceIDFrom = (payload) => {
     return {
-        type : "LOG_IN",
-        payload : user
+        type : "CREATE_INVOICE_ID_FROM",
+        payload : payload
+    };
+}
+
+export const signIn = () => {
+    return {
+        type : "SIGN_IN"
+    };
+};
+
+export const logOut = () => {
+    return {
+        type : "LOG_OUT"
+    };
+};
+
+export const setUser = (payload) => {
+    return {
+        type : "SET_USER",
+        payload : payload
     };
 };
 
 
-export const deleteAllInvoices = () => {
+export const updateUserData = (payload) => {
     return {
-        type : "DELETE_ALL_INVOICES"
+        type : "UPDATE_USER_DATA",
+        payload : payload
+    };
+};
+
+export const modifyUserData = (payload) => {
+    return {
+        type : "MODIFY_USER_DATA",
+        payload : payload
     };
 };

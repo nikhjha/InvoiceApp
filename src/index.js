@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware} from "redux";
 import { Provider } from "react-redux";
-import invoices from "./reducers";
+import rootReducer from "./reducers";
+import reduxMiddleware from "./redux-middleware";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const store = createStore(invoices);
+const store = createStore(rootReducer, {}, applyMiddleware(reduxMiddleware));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,12 +1,30 @@
-.user-panel {
+.user-panel form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 1.2rem;
 }
+.user-panel > button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0rem;
+    padding: 0.2rem 0.3rem;
+    width: 8rem;
+    height: 2rem;
+    background-color: rgb(240, 24, 24);
+    color: var(--text-colour);
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+.user-panel > button:hover {
 
-.user-panel > * {
+    background-color: rgb(255,0,0);
+
+}
+.user-panel form > * {
     margin: 0.75rem 0rem;
 }
 
@@ -22,10 +40,10 @@
     border: 0.1rem solid var(--secondary-colour);
 }
 
-.user-panel button{
-    margin-top: 6rem;
-    width: 5rem;
-    height: 1.5rem;
+.user-panel form button{
+    padding: 0.2rem;
+    width: 7rem;
+    height: 2rem;
     background-color: var(--primary-colour);
     color: var(--text-colour);
     border: none;

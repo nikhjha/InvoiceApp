@@ -113,7 +113,7 @@ export default function CreateInvoice() {
   };
 
   const today = new Date();
-  const todayString = `${today.getFullYear()}-${today.getMonth() < 9 ? "0"+(today.getMonth()+1) : today.getMonth()+1}-${today.getDate()}`;
+  const todayString = `${today.getFullYear()}-${today.getMonth() < 9 ? "0"+(today.getMonth()+1) : today.getMonth()+1}-${today.getDate() < 10 ? "0"+today.getDate() : today.getDate()}`;
   const [clientName, setClientName] = useState("Client Name");
   const [clientAddress, setClientAddress] = useState("1 client address city, state, country zip code");
   const [dueDate, setDueDate] = useState(todayString);

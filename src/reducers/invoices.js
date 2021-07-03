@@ -12,7 +12,7 @@ const markAsPaid = (state,id) => {
     });
 }
 
-const boilerPlateInvoice = [
+export const boilerPlateInvoice = [
     {
         invoiceID : 997,
         yourDetail : '647-444-1234 your@email.com yourwebsite.com',
@@ -70,12 +70,12 @@ const boilerPlateInvoice = [
 
 const invoices = (state = [...boilerPlateInvoice], action) => {
     switch(action.type){
+        case "LOAD_NEW_INVOICES":
+            return [...action.payload];
         case "PUSH_NEW_INVOICE":
             return [...state, action.payload];
         case "DELETE_INVOICE":
             return [...deleteInvoice(state,action.payload)];
-        case "DELETE_ALL_INVOICES":
-            return [];
         case "MARK_AS_PAID":
             return [...markAsPaid(state,action.payload)];
         default :

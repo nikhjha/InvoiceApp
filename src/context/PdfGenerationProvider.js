@@ -26,7 +26,7 @@ export default function PdfGenerationProvider({children}) {
             pdf.addPage();
           }
         }
-        pdf.save("download.pdf");
+        pdf.save("invoice-generated.pdf");
         callback();
     }
       const generatePdfByData = (data) => {
