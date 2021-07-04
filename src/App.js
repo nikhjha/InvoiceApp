@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import {
@@ -20,38 +20,21 @@ const InvalidRoute = () => {
   return <div></div>;
 };
 function App() {
-  const [toShow, setToShow] = useState(true);
-  useEffect(() => {
-    if (window.screen.width < 980) {
-      setToShow(false);
-    }
-  }, []);
   return (
-    <div>
-      {toShow && (
-        <PdfGenerationProvider>
-          
-            <Router>
-            <AuthProvider>
-              <Navbar />
-              <Switch>
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/create-new-invoice" component={CreateInvoice} />
-                <Route path="/invoice/:id" component={PreviewInvoice} />
-                <Route path="/user" component={UserPanel} />
-                <Route path="/" component={InvalidRoute} />
-              </Switch>
-              </AuthProvider>
-            </Router>
-          
-        </PdfGenerationProvider>
-      )}
-      {!toShow && (
-        <div className="small-screen">
-          <p>Not Compatible for small view please use big screen size.</p>
-        </div>
-      )}
-    </div>
+    <PdfGenerationProvider>
+      <Router>
+        <AuthProvider>
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/create-new-invoice" component={CreateInvoice} />
+            <Route path="/invoice/:id" component={PreviewInvoice} />
+            <Route path="/user" component={UserPanel} />
+            <Route path="/" component={InvalidRoute} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </PdfGenerationProvider>
   );
 }
 
