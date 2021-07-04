@@ -22,7 +22,7 @@ const InvalidRoute = () => {
 function App() {
   const [toShow, setToShow] = useState(true);
   useEffect(() => {
-    if (window.screen.width < 1450) {
+    if (window.screen.width < 980) {
       setToShow(false);
     }
   }, []);
